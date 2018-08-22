@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Quiz: <%=@quiz.name%> </h1>
+  <%= form_tag add_questions_path, :id => @quiz.id, remote: true do  %>
+
+  <div class="row form-group">
+    <div class="col-sm-2"><%= label_tag 'Question:'%></div>
+    <div class="col-sm-7"><%= text_area_tag :question, "",:required => true,  class: "form-control"%></div>
+  </div>
+
+  <div class="row">
+    <table class="table">
+      <tr>
+        <th>Answer</th>
+        <th>Choices</th>
+        <th><%=link_to "+", @quiz, class:"btn btn-success"%></th>
+      </tr>
+      <tr>
+        <td><input type="checkbox" unchecked data-toggle="toggle"><br></td>
+        <td><%= text_field_tag :choice_0, "",:required => true,  class: "form-control"%></td>
+        <td> <td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" unchecked data-toggle="toggle"><br></td>
+        <td><%= text_field_tag :choice_1, "",:required => true,  class: "form-control"%></td>
+        <td> <td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" unchecked data-toggle="toggle"><br></td>
+        <td><%= text_field_tag :choice_2, "",:required => true,  class: "form-control"%></td>
+        <td> <td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" unchecked data-toggle="toggle"><br></td>
+        <td><%= text_field_tag :choice_3, "",:required => true,  class: "form-control"%></td>
+        <td> <td>
+      </tr>
+    </table>
+  </div>
+  <%= submit_tag("Add Question", class:'btn btn-primary')%>
+  <%= link_to("Back", quizzes_path, class:'btn btn-primary')%>
+  <%end%>
+
+</div>

@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-lg-12 col-centered">
+    <h2>Create a Quiz</h2>
+      <%= form_for @quiz do |f|%>
+        <p><%= f.label :name%> <br/>
+           <%= f.text_field :name%>
+        </p>
+        <%= f.submit "Create a new quiz"%>
+      <%end %>
+  </div>
+</div>
